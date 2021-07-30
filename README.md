@@ -21,8 +21,8 @@
   
 1. [About the project](#about-the-project)
 2. [The code](#the-code)
-    - [Prerequisites](#prerequisites)  
-    - [Installation](#installation)  
+    - [Eyelink extention](#eyelink-extention)  
+    - [Presentation code](#presentation-code)  
 
 
 ## About the project  
