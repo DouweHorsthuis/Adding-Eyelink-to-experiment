@@ -14,10 +14,14 @@ Note:
 
 
 
-Copy line 1-108 and paste it above your current paradigm code. 
+Copy line 1-111 and paste it above your current paradigm code. 
 
-After line 108 you have all the code you need to set up your paradigm. Often this is where trails and types of stimuli get decided.
+After line 111 there is some optional code that will put an image or a drawing on the host pc in case you want to be able to see where the gaze of the participant is.
 
-Copy line 118-121 and paste this in your PCL. This will trigger the eyetracker to ask you to manually start saving (by hitting the O button on the keyboard)
+After line 121 you have all the code you need to set up your paradigm. Often this is where trails and types of stimuli get decided.
 
-Line 123-136 are very paradigm depended, this part of the code allows you to send strings to your EDF file that will time lock stuff. 
+Copy line 128-131 and paste this in your PCL. This will trigger the eyetracker to ask you to manually start saving (by hitting the O button on the keyboard)
+
+Line 131-152 are very paradigm depended, this part of the code allows you to send strings to your EDF file that will time lock stuff. 
+
+The last 2 lines run the clean routine that will transfer your eyetracking code to you computer
