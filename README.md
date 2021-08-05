@@ -49,7 +49,7 @@ Note:
 
 Copy line 1-111 and paste it above your current paradigm code. 
 
-After line 111 there is some optional code that will put an image or a drawing on the host pc in case you want to be able to see where the gaze of the participant is.
+After line 111 there is some optional code that will put an image or a drawing on the host pc in case you want to be able to see where the gaze of the participant is. This will only work if you are using the new version of the EyeLink Developers Kit. We are currently not doing this, so we can only use full screen images OR it will be located in the top center of the screen.
 
 After line 121 you have all the code you need to set up your paradigm. Often this is where trails and types of stimuli get decided.
 

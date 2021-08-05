@@ -109,15 +109,15 @@ end;
 #It's important to do this before using commands to transfer graphics to / do drawing on the Host PC
 EyeLink.send_command("set_idle_mode");
 wait_interval(50);#in ms
-# >>>>>>>>>>>optional<<<<<<<<<<<<
+# >>>>>>>>>>>optional<<<<<<<<<<<< To put a picture in the center of the screen, you need the a new version of the EyeLink Developers Kit. Wihtout this you can load a full screen picture or the picture will always only be in the top left corner.
 # you can draw on the host pc to see where people are looking
 EyeLink.send_command("clear_screen 0") #clearing screen
 # you can use one of the 2 following options. 
 #The first one allows you to load a picture to the screen (stimulus) and see if people are looking there)
-tracker.set_parameter("transfer_image", [imagePath, xs, ys, width, height, xd, yd]); #xs, ys: top-left corner - width, height: size (value of 0 means everything) - xd, yd,: location (top-left)  where it will be presented on the host pc
+EyeLink.set_parameter("transfer_image", [imagePath, xs, ys, width, height, xd, yd]); #xs, ys: top-left corner - width, height: size (value of 0 means everything) - xd, yd,: location (top-left)  where it will be presented on the host pc
 #tracker.set_parameter("transfer_image", [images[i].filename(), ",0,0,0,0," + string(display_width/2 - images[i].width()/2) + "," + string (display_height/2 - images[i].height()/2)); # example
 #the second one draws a figure (box) on the screen of 100 x 100 pixels
-tracker.send_command("draw_box" + string(display_width/2-50) + " " + string (display_ height/2-50 + " " + string(display_width/2+50)+ " " + string(display_height/2+50) + "4"); 
+EyeLink.send_command("draw_box" + string(display_width/2-50) + " " + string (display_ height/2-50 + " " + string(display_width/2+50)+ " " + string(display_height/2+50) + "4"); 
 
 ##ET##
 #here there would be paradigm specific code, that maybe sets-up trials or other important stuff presenation will do, but it won't present anything yet.
@@ -138,13 +138,13 @@ EyeLink.send_command("record_status_message 'visual trial " + string(i) + "/42 s
 #this is more modifiable code that will allow you to add more info to your trials. 
 EyeLink.send_string( "TRIALID " + string(i));#in this case i = the int that counts the trials,
 # Or you can just tell the EDF file to timelock the start of the trial, or you can add variables that you created in the PCL and input in the EDF file what type of trial it is etc.
-Eyelink.send_message("stimulus_onset"); # put this in the line before you present your stimulus in the PCL file
+EyeLink.send_message("stimulus_onset"); # put this in the line before you present your stimulus in the PCL file
 
 #if you are sending more than 5 messages you need to ad a 1ms wait between the next. 
 wait_interval(1)
 
 #doing drift correctiong/ drift check is important, but you need to figure out how often you can do this, as it requiers your paradigm to stop, people will look at the cross and resume the paradigm
-Eyelink.calibrate( et_calibrate_drift_correct, 7.0, 0.0, 0.0 );
+EyeLink.calibrate( et_calibrate_drift_correct, 7.0, 0.0, 0.0 );
 # this should be added add the end of your trial so you can see in the EDF file where the trial stopped
 	EyeLink.send_command("record_status_message 'EndTrial'");
 	EyeLink.send_message("TRIAL_RESULT 0");# this is the proper way to end the trial, not sure if it is read different for the EDF file or if you can change this to a different message like "end trail"
