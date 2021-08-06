@@ -14,7 +14,7 @@
 
 <h3 align="center">Adding Eyelink to a Presentation® Experiment</h3>
 
-<h4 align="center">This is a work in progress still. This Repo contain code for Presentation® to add SR research's Eyelink Eyetracker to your experiment.</h4>
+<h4 align="center">This Repo contain code for Presentation® to add SR research's Eyelink Eyetracker to your experiment. The code is checked by the support team of SR-research</h4>
 
 
 **Table of Contents**
