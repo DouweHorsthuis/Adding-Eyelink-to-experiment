@@ -49,7 +49,7 @@ Note:
 
 Copy line 1-111 and paste it above your current paradigm code. 
 
-After line 111 there is some optional code that will put an image or a drawing on the host pc in case you want to be able to see where the gaze of the participant is. This will only work if you are using the new version of the EyeLink Developers Kit. We are currently not doing this, so we can only use full screen images OR it will be located in the top center of the screen.
+After line 111 there is some optional code that will put an image or a drawing on the host pc in case you want to be able to see where the gaze of the participant is. This will only work if you are using the new version of the EyeLink Developers Kit. We are currently not doing this, so we can only use full screen images OR it will be located in the top center of the screen. It's also very important that the size of the image matches the size of the sceen you are projecting it on. In most cases it's 1280x1024 (in all booth with a viewsonic screen at CNLx). If you go bigger (I tried 1920x1080) the whole thing gets ignored.
 
 After line 121 you have all the code you need to set up your paradigm. Often this is where trails and types of stimuli get decided.
 

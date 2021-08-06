@@ -111,11 +111,11 @@ EyeLink.send_command("set_idle_mode");
 wait_interval(50);#in ms
 # >>>>>>>>>>>optional<<<<<<<<<<<< To put a picture in the center of the screen, you need the a new version of the EyeLink Developers Kit. Wihtout this you can load a full screen picture or the picture will always only be in the top left corner.
 # you can draw on the host pc to see where people are looking
-EyeLink.send_command("clear_screen 0") #clearing screen
+EyeLink.send_command("clear_screen 0"); #clearing screen
 # you can use one of the 2 following options. 
 #The first one allows you to load a picture to the screen (stimulus) and see if people are looking there)
-EyeLink.set_parameter("transfer_image", [imagePath, xs, ys, width, height, xd, yd]); #xs, ys: top-left corner - width, height: size (value of 0 means everything) - xd, yd,: location (top-left)  where it will be presented on the host pc
-#tracker.set_parameter("transfer_image", [images[i].filename(), ",0,0,0,0," + string(display_width/2 - images[i].width()/2) + "," + string (display_height/2 - images[i].height()/2)); # example
+EyeLink.set_parameter("transfer_image", [imagePath, xs, ys, width, height, xd, yd]); #this is the updated code, this does not work with the current version of the eyetracker we have at the CNLx
+# example: EyeLink.set_parameter("transfer_image", et_bit.filename()); #for this to work you need to load the et_bit as a bitmap in the SCE file. This bitmap needs to match in size the screen you are presenting your paradigm on (it cannot be bigger)
 #the second one draws a figure (box) on the screen of 100 x 100 pixels
 EyeLink.send_command("draw_box" + string(display_width/2-50) + " " + string (display_ height/2-50 + " " + string(display_width/2+50)+ " " + string(display_height/2+50) + "4"); 
 
@@ -141,7 +141,7 @@ EyeLink.send_string( "TRIALID " + string(i));#in this case i = the int that coun
 EyeLink.send_message("stimulus_onset"); # put this in the line before you present your stimulus in the PCL file
 
 #if you are sending more than 5 messages you need to ad a 1ms wait between the next. 
-wait_interval(1)
+wait_interval(1);
 
 #doing drift correctiong/ drift check is important, but you need to figure out how often you can do this, as it requiers your paradigm to stop, people will look at the cross and resume the paradigm
 EyeLink.calibrate( et_calibrate_drift_correct, 7.0, 0.0, 0.0 );

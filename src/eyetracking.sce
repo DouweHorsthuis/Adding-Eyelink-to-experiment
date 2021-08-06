@@ -16,7 +16,7 @@ Note:
 
 Copy line 1-111 and paste it above your current paradigm code. 
 
-After line 111 there is some optional code that will put an image or a drawing on the host pc in case you want to be able to see where the gaze of the participant is.
+After line 111 there is some optional code that will put an image or a drawing on the host pc in case you want to be able to see where the gaze of the participant is. For this to work you need to load a bitmap in your sce file.  This bitmap needs to match in size the screen you are presenting your paradigm on (it cannot be bigger, or it will be ignored).
 
 After line 121 you have all the code you need to set up your paradigm. Often this is where trails and types of stimuli get decided.
 
