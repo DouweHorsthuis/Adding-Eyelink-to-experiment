@@ -1,5 +1,11 @@
-There is no scenario file for this, because this is not an experiment. 
-Instead you can find here how to use the code in the .pcl file to add eyetracking to you paradigm
+This is the only thing to add to the .sce file:
+
+picture { #this will change the background of the Eyetracker calibration to the same as the paradigm's
+   background_color = 128, 128, 128; #gray
+} et_calibration; #very important to change, so that the participant pupil doesn't decrease/disapear once it goes from the black default calibration background to whatever you use for your paradigm
+
+
+For the rest you can find here how to use the code in the .pcl file to add eyetracking to you paradigm
 
 First you need to add the eyelink extention to your paradigm
 
