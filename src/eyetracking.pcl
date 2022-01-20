@@ -61,7 +61,6 @@ array <string> string_array[5];
 Eyelink_ver.split(" ",string_array);
 double el_v = double(string_array[3]); #Host PC software version will be el_v
 
-term.print_line(el_v);
 
 ### Step 2b SELECT AVAILABLE SAMPLE/EVENT DATA
 #Select which events are saved in the EDF file. Include everything just in case
