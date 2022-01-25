@@ -1,8 +1,10 @@
-This is the only thing to add to the .sce file:
+This are the 2 pictures to add to the .sce file:
 
 picture { #this will change the background of the Eyetracker calibration to the same as the paradigm's
    background_color = 128, 128, 128; #gray
 } et_calibration; #very important to change, so that the participant pupil doesn't decrease/disapear once it goes from the black default calibration background to whatever you use for your paradigm
+
+bitmap { filename = "standard_et.jpg"; width = 253; height = 325; preload = true; } et_bit;# this will be presented on the ET to see where the participant is looking
 
 
 For the rest you can find here how to use the code in the .pcl file to add eyetracking to you paradigm
